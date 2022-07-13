@@ -20,7 +20,7 @@ endif
 
 if !5up
 	!max = $0B	;see http://www.smwcentral.net/?p=nmap&m=smwrom#02ACE5
-else				;$0A = 3up, $0B = 5up
+else				;$0A = 5up, $0A = 5up
 	!max = $0A
 endif
 
@@ -40,7 +40,7 @@ if !5up
 	
 	fix5up:
 		BCC Return
-		CPY #$0F
+		CPY #$10
 		LDA #!Pal2up<<1
 		BCC Return
 		CPY #$10
