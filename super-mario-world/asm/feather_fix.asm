@@ -7,5 +7,5 @@ org $01C5AE
 			; Vitor edit: give smoke regardless of
 			; offscreen status.
 			BRA +
-			NOP #4	
+			BRA #4	
 		+
