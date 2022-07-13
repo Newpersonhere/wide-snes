@@ -55,11 +55,11 @@ org $01FF14|!bank
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
                     lda $02FE|!addr,Y
-                    cmp #$0C                ;  If tile 0C... (Larry's hair)
+                    cmp #$1A                ;  If tile 0C... (Larry's hair)
                     bne HAIR_TILE2
                     lda #$1A                ;  Replace with tile 1A (Iggy's hair)
                     bra STORE_TILE
-HAIR_TILE2:         cmp #$1C                ;  If tile 1C... (Larry's Hair while turning)
+HAIR_TILE2:         cmp #$1B                ;  If tile 1C... (Larry's Hair while turning)
                     bne NOT_IGGY
                     lda #$1B                ;  Replace with tile 1B (Iggy's hair while turning)
 
@@ -156,4 +156,4 @@ ADDR_01FF98:        lda !E4,X
                     plx                       
                     rts                       ; Return 
 
-                    ;padbyte $FF : pad $028000 ; You can remove the ";" from the beginning of this line if you're not using the Classic Piranha Plant Fix patch
+                    padbyte $FF : pad $028000 ; You can remove the ";" from the beginning of this line if you're not using the Classic Piranha Plant Fix patch
